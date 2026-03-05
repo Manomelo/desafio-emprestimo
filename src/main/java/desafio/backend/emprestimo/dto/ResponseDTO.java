@@ -1,11 +1,13 @@
 package desafio.backend.emprestimo.dto;
 
-import desafio.backend.emprestimo.enums.TipoEmprestimo;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record ResponseDTO(
     String customer,
-    TipoEmprestimo type,
-    double interestRate
+    @JsonProperty("loans")
+    Set<EmprestimoDTO> emprestimos
 ) {}
 
 

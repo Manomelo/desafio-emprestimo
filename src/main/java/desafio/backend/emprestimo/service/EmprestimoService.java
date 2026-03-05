@@ -5,21 +5,21 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import desafio.backend.emprestimo.dto.EmprestimoDTO;
+import desafio.backend.emprestimo.dto.UsuarioRequestDTO;
 import desafio.backend.emprestimo.enums.Estado;
 import desafio.backend.emprestimo.enums.TipoEmprestimo;
-import desafio.backend.emprestimo.model.Emprestimo;
-import desafio.backend.emprestimo.model.Usuario;
 
 
 
 @Service
 public class EmprestimoService {
     
-    public Set<Emprestimo> gerarEmprestimos(Usuario usuario){
-        Set<Emprestimo> emprestimos = new HashSet<>();
-        Emprestimo emprestimoPessoal = new Emprestimo(TipoEmprestimo.PESSOAL,4 );
-        Emprestimo emprestimoGarantido = new Emprestimo(TipoEmprestimo.GARANTIA, 3);
-        Emprestimo emprestimoConsignado = new Emprestimo(TipoEmprestimo.CONSIGNADO, 2);
+    public Set<EmprestimoDTO> gerarEmprestimos(UsuarioRequestDTO usuario){
+        Set<EmprestimoDTO> emprestimos = new HashSet<>();
+        EmprestimoDTO emprestimoPessoal = new EmprestimoDTO(TipoEmprestimo.PESSOAL,4 );
+        EmprestimoDTO emprestimoGarantido = new EmprestimoDTO(TipoEmprestimo.GARANTIA, 3);
+        EmprestimoDTO emprestimoConsignado = new EmprestimoDTO(TipoEmprestimo.CONSIGNADO, 2);
 
         // 1. Conceder o empréstimo pessoal se o salário do cliente for igual ou inferior a R$ 3000.
         // 2. Conceder o empréstimo com garantia se o salário do cliente for igual ou inferior a R$ 3000.
@@ -33,7 +33,7 @@ public class EmprestimoService {
         // 4. Conceder o empréstimo com garantia se o salário do cliente estiver entre R$ 3000 e R$ 5000, 
         // se o cliente tiver menos de 30 anos e residir em São Paulo (SP).
         if((usuario.getIncome() >= 3000 && usuario.getIncome() <= 5000) && 
-            usuario.getAge() <= 30 && 
+            usuario.getAge() < 30 && 
             usuario.getLocation() == Estado.SP){
                 emprestimos.add(emprestimoPessoal);
                 emprestimos.add(emprestimoGarantido);

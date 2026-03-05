@@ -17,7 +17,7 @@ public class UsuarioRequestDTO {
     private int age;
 
     @NotBlank(message = "CPF nao pode ser vazio")
-    @Size(min = 11, max = 11, message = "CPF deve conter 11 digitos")
+    @Size(min = 14, max = 14, message = "CPF deve conter 11 digitos")
     private String cpf;
 
     @NotNull(message = "Name nao pode ser vazio")
