@@ -1,5 +1,8 @@
 package desafio.backend.emprestimo.enums;
 
+/**
+ * Enumeracao de unidades federativas aceitas para residencia do cliente.
+ */
 public enum Estado {
     AC,
     AL,

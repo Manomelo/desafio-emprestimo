@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Modelo de dados do usuario para o calculo do emprestimo
+ * Modelo de dominio com os dados cadastrais e financeiros do usuario.
  */
 
 @Getter

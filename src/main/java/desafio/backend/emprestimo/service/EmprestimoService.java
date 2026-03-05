@@ -10,11 +10,18 @@ import desafio.backend.emprestimo.dto.UsuarioRequestDTO;
 import desafio.backend.emprestimo.enums.Estado;
 import desafio.backend.emprestimo.enums.TipoEmprestimo;
 
-
-
+/**
+ * Servico com as regras de elegibilidade para concessao de emprestimos.
+ */
 @Service
 public class EmprestimoService {
     
+    /**
+     * Gera os emprestimos elegiveis para um cliente de acordo com renda, idade e estado.
+     *
+     * @param usuario dados do cliente usados na avaliacao
+     * @return conjunto de emprestimos que o cliente pode contratar
+     */
     public Set<EmprestimoDTO> gerarEmprestimos(UsuarioRequestDTO usuario){
         Set<EmprestimoDTO> emprestimos = new HashSet<>();
         EmprestimoDTO emprestimoPessoal = new EmprestimoDTO(TipoEmprestimo.PESSOAL,4 );
