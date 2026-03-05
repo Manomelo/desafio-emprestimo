@@ -22,7 +22,7 @@ public class UsuarioRequestDTO {
 
     /** CPF do cliente no formato esperado pela API. */
     @NotBlank(message = "CPF nao pode ser vazio")
-    @Size(min = 14, max = 14, message = "CPF deve conter 11 digitos")
+    @Size(min = 11, max = 14, message = "CPF deve conter 11 digitos")
     private String cpf;
 
     /** Nome completo do cliente. */

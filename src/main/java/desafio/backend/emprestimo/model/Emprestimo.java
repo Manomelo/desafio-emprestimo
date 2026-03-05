@@ -14,6 +14,6 @@ public class Emprestimo {
     private TipoEmprestimo tipoEmprestimo;
 
     /** Taxa de juros aplicada ao emprestimo. */
-    private double interestRate;
+    private int interestRate;
 
 }

@@ -14,6 +14,6 @@ public record EmprestimoDTO(
         TipoEmprestimo type,
 
         @JsonProperty("interest_rate")
-        double interestRate) {
+        int interestRate) {
 
 }

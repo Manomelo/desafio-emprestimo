@@ -39,7 +39,7 @@ public class EmprestimoService {
         // se o cliente tiver menos de 30 anos e residir em São Paulo (SP).
         // 4. Conceder o empréstimo com garantia se o salário do cliente estiver entre R$ 3000 e R$ 5000, 
         // se o cliente tiver menos de 30 anos e residir em São Paulo (SP).
-        if((usuario.getIncome() >= 3000 && usuario.getIncome() <= 5000) && 
+        if((usuario.getIncome() > 3000 && usuario.getIncome() < 5000) && 
             usuario.getAge() < 30 && 
             usuario.getLocation() == Estado.SP){
                 emprestimos.add(emprestimoPessoal);
